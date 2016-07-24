@@ -42,5 +42,17 @@ function addClass(id, className) {
 }
 
 function makeEditable(id) {
-  document.getElementById(id).contentEditable = true;
+  document.getElementById(id).ondblclick = startEdit(id);
 }
+
+  function startEdit(id) { document.getElementById(id).contentEditable = true; }
+  function stopEdit(id) { 
+    document.getElementById(id).contentEditable  = false;
+    var temp = document.getElementById(id).innerHTML.split(' ');
+    for(var i = 0;i < temp.length;i++) {
+      if(temp[i].indexOf('?') > -1) {
+        var arg = temp[i].split('?');
+        console.log(arg);
+      }
+    }
+  }
