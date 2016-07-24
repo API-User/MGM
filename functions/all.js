@@ -1,5 +1,5 @@
 function ajax_post(url, vars, callback) {
-	var h = XMLHttpRequest();
+	var h = new XMLHttpRequest();
   h.open('POST', url, true);
   h.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   h.onreadystatechange = function() {
