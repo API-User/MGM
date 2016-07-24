@@ -20,3 +20,27 @@ function createPopup(title, url, width, height) {
 		window.open(url, title, 'width='+width+',height='+height);
 }
 
+function createHeader(type) {
+  switch(type) {
+    case 0:
+        type = 'standard'; break;
+    case 1:
+        type = 'mobil'; break;
+    case 2:
+        type = 'development'; break;
+  }
+  var header = '<div id="header" class="header '+type+'"></div>';
+  document.body.insertAdjacentHTML( 'afterbegin', header );
+}
+
+function changeText(id, value) {
+  document.getElementById(id).innerHTML = value;
+}
+
+function addClass(id, className) {
+  document.getElementById(id).classList += className;
+}
+
+function makeEditable(id) {
+  document.getElementById(id).contentEditable = true;
+}
