@@ -43,6 +43,7 @@ function addClass(id, className) {
 
 function makeEditable(id) {
   document.getElementById(id).ondblclick = startEdit(id);
+  document.getElementById(id).onblur = stopEdit(id);
 }
 
   function startEdit(id) { document.getElementById(id).contentEditable = true; }
