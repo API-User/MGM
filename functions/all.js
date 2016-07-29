@@ -41,6 +41,10 @@ function addClass(id, className) {
   document.getElementById(id).classList += className;
 }
 
+function addClickActivity(id, callback) {
+  document.getElementById(id).onclick = callback;
+}
+
 function makeEditable(id) {
   document.getElementById(id).ondblclick = startEdit(id);
   document.getElementById(id).onblur = stopEdit(id);
